@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT || 3000
 
 var middleware = (req, res, next) => {
     console.log("Me gusta la pizza")
@@ -17,6 +18,6 @@ app.get('/', (req, res) => {
 //app.use(express.static('public'))
 app.use('/', middleware, middleware2)
 
-app.listen(3000, () => {
-    console.log("Server on")
+app.listen(PORT, () => {
+    console.log("Server on, Port: " + PORT)
 })
